@@ -25,6 +25,20 @@ Then open `/plugins` in Codex and install **ahel**.
 
 Add the MCP address `https://mcp.ahel.ai`. The first call opens a sign-in at ahel.ai; there is nothing else to configure. Setup for each client: https://ahel.ai/agents
 
+## Job skills
+
+Ready-made jobs that run on Ahel. Install `ahel` first, then the skill. Each one quotes the price before it runs and ends with the exact cost. Each README has a receipt from a real run.
+
+| Skill | What it does | Real run |
+|---|---|---|
+| [find-work-emails](plugins/find-work-emails) | Names + company domains in, verified work emails out as a CSV | 10 people, 8 found, 5 valid: $0.074 |
+| [eu-company-check](plugins/eu-company-check) | Register record, LEI and sanctions screen for EU companies, sourced | 10 companies, 9 records: $0.084 |
+
+```
+claude plugin install find-work-emails@ahel
+claude plugin install eu-company-check@ahel
+```
+
 ## What your agent can do
 
 - Find a person's work email, enrich a company from its domain, search companies and people

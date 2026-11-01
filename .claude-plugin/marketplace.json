@@ -9,6 +9,20 @@
       "description": "Company and people enrichment, SEO and SERP data, social media data, official EU business registers and more, through one MCP connection. Pay per call, price shown before each run.",
       "category": "data",
       "homepage": "https://ahel.ai"
+    },
+    {
+      "name": "find-work-emails",
+      "source": "./plugins/find-work-emails",
+      "description": "Use when the user has a list of people (name + company domain, or a LinkedIn URL) and wants their work emails found and verified, as a CSV with a status per row and the total cost. Quotes the price first. Needs the ahel plugin.",
+      "category": "productivity",
+      "homepage": "https://github.com/ahel-technologies/ahel/tree/main/plugins/find-work-emails"
+    },
+    {
+      "name": "eu-company-check",
+      "source": "./plugins/eu-company-check",
+      "description": "Use when the user wants to check EU companies by name and country or registry code: official register record and status, LEI and a sanctions screen, as a sourced table with the total cost. Estonia, Finland, Norway, Latvia, Ireland, France. Needs the ahel plugin.",
+      "category": "productivity",
+      "homepage": "https://github.com/ahel-technologies/ahel/tree/main/plugins/eu-company-check"
     }
   ]
 }

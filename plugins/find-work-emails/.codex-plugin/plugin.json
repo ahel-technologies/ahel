@@ -1,0 +1,26 @@
+{
+  "name": "find-work-emails",
+  "version": "1.0.0",
+  "description": "Find and verify work emails for a list of people, as a CSV with status and total cost. Runs on Ahel, pay per result.",
+  "author": { "name": "Ahel Technologies", "email": "support@ahel.ai", "url": "https://ahel.ai" },
+  "homepage": "https://ahel.ai",
+  "repository": "https://github.com/ahel-technologies/ahel",
+  "license": "MIT",
+  "keywords": ["email", "email-finder", "email-verification", "leads", "outbound"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Find work emails",
+    "shortDescription": "Work emails for a list of people, verified",
+    "longDescription": "Give a list of names and company domains. The skill quotes the price, finds each work email through Ahel, verifies it, and returns a CSV with a status per row and the total cost.",
+    "developerName": "Ahel Technologies",
+    "category": "Productivity",
+    "websiteURL": "https://ahel.ai",
+    "supportURL": "mailto:support@ahel.ai",
+    "privacyPolicyURL": "https://ahel.ai/privacy",
+    "termsOfServiceURL": "https://ahel.ai/terms",
+    "defaultPrompt": [
+      "Find and verify work emails for the people in leads.csv.",
+      "Find the work email for Jane Doe at example.com and check it is deliverable."
+    ]
+  }
+}

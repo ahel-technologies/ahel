@@ -1,0 +1,26 @@
+{
+  "name": "eu-company-check",
+  "version": "1.0.0",
+  "description": "Check EU companies against the official register, LEI records and sanctions lists, as a sourced table with the total cost. Runs on Ahel, pay per result.",
+  "author": { "name": "Ahel Technologies", "email": "support@ahel.ai", "url": "https://ahel.ai" },
+  "homepage": "https://ahel.ai",
+  "repository": "https://github.com/ahel-technologies/ahel",
+  "license": "MIT",
+  "keywords": ["kyb", "business-register", "lei", "sanctions", "compliance"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "EU company check",
+    "shortDescription": "Register record, LEI and sanctions screen, sourced",
+    "longDescription": "Give EU companies by name and country, or by registry code. The skill quotes the price, reads the official register record, finds the LEI, screens OFAC and EU sanctions lists, and returns one table with a source and date on every fact.",
+    "developerName": "Ahel Technologies",
+    "category": "Productivity",
+    "websiteURL": "https://ahel.ai",
+    "supportURL": "mailto:support@ahel.ai",
+    "privacyPolicyURL": "https://ahel.ai/privacy",
+    "termsOfServiceURL": "https://ahel.ai/terms",
+    "defaultPrompt": [
+      "Check these suppliers: Bolt Technology OÜ (EE), Supercell Oy (FI), Equinor ASA (NO).",
+      "Is Finnish company 2336509-6 still registered, does it have an LEI, and is it on a sanctions list?"
+    ]
+  }
+}

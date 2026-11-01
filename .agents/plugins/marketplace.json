@@ -7,6 +7,18 @@
       "source": { "source": "local", "path": "./plugins/ahel" },
       "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
       "category": "Productivity"
+    },
+    {
+      "name": "find-work-emails",
+      "source": { "source": "local", "path": "./plugins/find-work-emails" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    },
+    {
+      "name": "eu-company-check",
+      "source": { "source": "local", "path": "./plugins/eu-company-check" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
     }
   ]
 }

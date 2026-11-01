@@ -1,0 +1,10 @@
+{
+  "name": "find-work-emails",
+  "version": "1.0.0",
+  "description": "Use when the user has a list of people (name + company domain) and wants their work emails found and verified, as a CSV with a status per row and the total cost. Runs on Ahel: price quoted before it runs, pay per result, no subscription.",
+  "author": { "name": "Ahel Technologies", "email": "support@ahel.ai", "url": "https://ahel.ai" },
+  "homepage": "https://ahel.ai",
+  "repository": "https://github.com/ahel-technologies/ahel",
+  "license": "MIT",
+  "keywords": ["email", "email-finder", "email-verification", "leads", "outbound", "gtm"]
+}

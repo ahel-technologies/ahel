@@ -1,0 +1,10 @@
+{
+  "name": "eu-company-check",
+  "version": "1.0.0",
+  "description": "Use when the user wants to check EU companies (name + country, or a registry code): the official register record and status, the LEI, and a sanctions screen, as a sourced table with the total cost. Estonia, Finland, Norway, Latvia, Ireland and France. Runs on Ahel, pay per result.",
+  "author": { "name": "Ahel Technologies", "email": "support@ahel.ai", "url": "https://ahel.ai" },
+  "homepage": "https://ahel.ai",
+  "repository": "https://github.com/ahel-technologies/ahel",
+  "license": "MIT",
+  "keywords": ["kyb", "business-register", "lei", "sanctions", "compliance", "due-diligence"]
+}
