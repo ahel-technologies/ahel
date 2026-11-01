@@ -1,0 +1,16 @@
+{
+  "name": "ahel",
+  "owner": { "name": "Ahel Technologies", "email": "support@ahel.ai" },
+  "metadata": { "description": "Data and tools for your AI agent: hundreds of data tasks from one catalog, paid per call from a prepaid balance." },
+  "plugins": [
+    {
+      "name": "ahel",
+      "source": "plugins/ahel",
+      "description": "Company and people enrichment, SEO and SERP data, social media data, official EU business registers and more, through one MCP connection. Pay per call, price shown before each run.",
+      "homepage": "https://ahel.ai",
+      "repository": "https://github.com/ahel-technologies/ahel",
+      "category": "data",
+      "keywords": ["mcp", "data", "enrichment", "email-finder", "seo", "serp", "social-media", "business-registers", "sanctions", "oauth"]
+    }
+  ]
+}
