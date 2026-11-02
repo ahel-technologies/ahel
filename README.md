@@ -1,5 +1,7 @@
 # Ahel
 
+[![mcptry](https://mcptry.com/badge/ai.ahel/ahel)](https://mcptry.com/servers/ai.ahel/ahel)
+
 Data and tools for your AI agent, from one catalog: company and people enrichment, SEO and SERP data, social media data, official EU business registers and more. One prepaid balance, pay per call, and each call's price is shown before it runs. No provider sign-ups or keys.
 
 Website: https://ahel.ai · Catalog: https://ahel.ai/catalog · MCP address: `https://mcp.ahel.ai`
