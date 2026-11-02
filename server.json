@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.ahel/ahel",
+  "title": "Ahel",
+  "description": "Data and tools for your AI agent: company, people, SEO, social and EU register data. Pay per call.",
+  "version": "1.0.1",
+  "websiteUrl": "https://ahel.ai",
+  "repository": {
+    "url": "https://github.com/ahel-technologies/ahel",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://ahel.ai/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.ahel.ai"
+    }
+  ]
+}
