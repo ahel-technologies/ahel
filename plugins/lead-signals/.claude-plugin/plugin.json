@@ -1,0 +1,10 @@
+{
+  "name": "lead-signals",
+  "version": "1.0.0",
+  "description": "Use when the user wants a watch list of companies, buyers and topics checked once a day, with only the new signals reported: new EU public tenders (TED), official business-register changes and possible sanctions matches, each with its source URL and run id. Keeps a local seen set; schedules with cron or Claude Code scheduled tasks. Runs on Ahel, pay per result.",
+  "author": { "name": "Ahel Technologies", "email": "support@ahel.ai", "url": "https://ahel.ai" },
+  "homepage": "https://ahel.ai",
+  "repository": "https://github.com/ahel-technologies/ahel",
+  "license": "MIT",
+  "keywords": ["lead-signals", "tenders", "ted", "business-register", "sanctions", "monitoring", "gtm"]
+}

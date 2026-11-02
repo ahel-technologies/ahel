@@ -23,6 +23,13 @@
       "description": "Use when the user wants to check EU companies by name and country or registry code: official register record and status, LEI and a sanctions screen, as a sourced table with the total cost. Estonia, Finland, Norway, Latvia, Ireland, France. Needs the ahel plugin.",
       "category": "productivity",
       "homepage": "https://github.com/ahel-technologies/ahel/tree/main/plugins/eu-company-check"
+    },
+    {
+      "name": "lead-signals",
+      "source": "./plugins/lead-signals",
+      "description": "Use when the user wants companies, buyers and topics watched once a day with only new signals reported: new EU tenders (TED), official business-register changes and possible sanctions matches, each with its source URL and run id. Keeps a local seen set; runs on a schedule. Needs the ahel plugin.",
+      "category": "productivity",
+      "homepage": "https://github.com/ahel-technologies/ahel/tree/main/plugins/lead-signals"
     }
   ]
 }

@@ -35,12 +35,14 @@ Ready-made jobs that run on Ahel. Install `ahel` first, then the skill. Each one
 |---|---|---|
 | [find-work-emails](plugins/find-work-emails) | Names + company domains in, verified work emails out as a CSV | 10 people, 8 found, 5 valid: $0.074 |
 | [eu-company-check](plugins/eu-company-check) | Register record, LEI and sanctions screen for EU companies, sourced | 10 companies, 9 records: $0.084 |
+| [lead-signals](plugins/lead-signals) | Daily watch: only new EU tenders, register changes and sanctions hits, each with source URL and run id | 3 topics + 20 companies: at most $0.21 a day; live checks 2 Nov: $0.016 |
 
 With the plugin marketplace (Claude Code):
 
 ```
 claude plugin install find-work-emails@ahel
 claude plugin install eu-company-check@ahel
+claude plugin install lead-signals@ahel
 ```
 
 With the [`skills`](https://skills.sh) CLI (Claude Code, Codex, Cursor and other agents; one line, no marketplace step):
@@ -48,6 +50,7 @@ With the [`skills`](https://skills.sh) CLI (Claude Code, Codex, Cursor and other
 ```
 npx skills add ahel-technologies/ahel --skill find-work-emails
 npx skills add ahel-technologies/ahel --skill eu-company-check
+npx skills add ahel-technologies/ahel --skill lead-signals
 ```
 
 The CLI asks which agent to install to, or takes `-a claude-code`, `-a codex`, `-a cursor` and `-y` to skip the questions. Skills installed this way still need the Ahel connection: the `ahel` plugin, or the MCP address `https://mcp.ahel.ai` in the agent's MCP settings (https://ahel.ai/agents).

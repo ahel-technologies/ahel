@@ -1,0 +1,26 @@
+{
+  "name": "lead-signals",
+  "version": "1.0.0",
+  "description": "Watch companies, buyers and topics; once a day, report only new EU tenders, register changes and sanctions matches, with source URLs and run ids. Runs on Ahel, pay per result.",
+  "author": { "name": "Ahel Technologies", "email": "support@ahel.ai", "url": "https://ahel.ai" },
+  "homepage": "https://ahel.ai",
+  "repository": "https://github.com/ahel-technologies/ahel",
+  "license": "MIT",
+  "keywords": ["lead-signals", "tenders", "business-register", "sanctions", "monitoring"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Lead signals",
+    "shortDescription": "Daily new tenders, register changes and sanctions hits",
+    "longDescription": "Give a watch list of companies (with registry numbers), public buyers and tender topics. Once a day the skill checks TED, the official business registers and sanctions lists through Ahel, compares with what it has already seen, and writes a short Markdown report of only the new signals, each with its source URL and run id.",
+    "developerName": "Ahel Technologies",
+    "category": "Productivity",
+    "websiteURL": "https://ahel.ai",
+    "supportURL": "mailto:support@ahel.ai",
+    "privacyPolicyURL": "https://ahel.ai/privacy",
+    "termsOfServiceURL": "https://ahel.ai/terms",
+    "defaultPrompt": [
+      "Watch new software tenders in Estonia and Bolt Technology OÜ (EE 12417834); report what is new every weekday morning.",
+      "Set up a daily lead-signals watch for the companies in targets.csv."
+    ]
+  }
+}
