@@ -19,7 +19,7 @@ MCP address `https://mcp.ahel.ai`, then stop. The first call opens a sign-in at 
 
 | Step | Task id | Inputs | Billing |
 | --- | --- | --- | --- |
-| Find | `people.email.find` | `{"full_name": "...", "domain": "acme.com"}`, or `{"first_name", "last_name", "domain"}`, or `{"linkedin_url": "https://www.linkedin.com/in/..."}` | Ahel tries providers cheapest first; most providers bill only when they find an email |
+| Find | `people.email.find` | `{"full_name": "...", "domain": "acme.com"}`, or `{"first_name", "last_name", "domain"}`, or `{"linkedin_url": "https://www.linkedin.com/in/..."}` | A find is about $0.005 per found email (QuickEnrich, measured on 14 calls), priced before every run. Ahel tries providers cheapest first; most providers bill only when they find an email |
 | Verify | `people.email.verify` | `{"email": "..."}` | One check per address; answers `status` (`valid`, `risky`, `invalid`), `catch_all`, `disposable`, `role_account` |
 
 A LinkedIn URL unlocks the cheapest finder, so pass it when the user has one. `domain` is the bare
@@ -60,7 +60,7 @@ company domain (`bolt.eu`, not `https://www.bolt.eu/`).
    `cost_usd` is the sum of `execution.cost.customer_actual_usd` for that row's find and verify.
    Never a list price: always the settled amount from the answer.
 6. **Report** in three lines: "10 people → 8 found, 5 valid, 2 catch-all, 1 invalid, 2 not found.
-   Total $0.074 (≈ $0.015 per valid email). File: work-emails-….csv". Add unresolved holds if any.
+   Total $0.074 (≈ $0.015 per valid email, all-in). File: work-emails-….csv". Add unresolved holds if any.
 
 ## Rules
 

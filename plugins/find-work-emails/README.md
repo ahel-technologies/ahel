@@ -56,7 +56,8 @@ sources. Emails are redacted here.
 
 - **10 people → 8 emails found, 5 valid, 2 catch-all, 1 invalid, 2 not found.**
 - **Total: $0.074** (8 finds $0.062 + 8 checks $0.012).
-- **$0.009 per email found, $0.015 per valid email.**
+- **$0.009 per email found, $0.015 per valid email, all-in for this run** (finds plus checks, divided by the valid addresses).
+- One find is about $0.005 per found email (QuickEnrich, measured on 14 calls), priced before every run; the exact quote is shown before each run.
 - The 2 misses cost nothing. Their last provider timed out, so Ahel still holds $0.037 each until
   that provider settles; it bills only when it finds an email.
 
