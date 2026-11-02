@@ -26,16 +26,19 @@ File, legal entities only.
 
 ## Tasks used
 
-| Step | Task id | Inputs | Billing |
+| Step | Task id | Inputs | Billing (Ahel's own provider, 2 Nov 2026) |
 | --- | --- | --- | --- |
-| Find the record | `companies.register.search` | `{"name": "Pipedrive", "country": "EE"}` with `endpoint_ids: ["ahel-registry.companies.register.search"]`, `max_items: 3` | Per successful call; a miss is free |
-| Read the record | `companies.register.profile` | `{"country": "EE", "registry_number": "11958539"}` | Per successful call |
+| Find the record | `companies.register.search` | `{"name": "Pipedrive", "country": "EE"}` with `endpoint_ids: ["ahel-registry.companies.register.search"]`, `max_items: 3` | $0.004 per successful call; a miss is free |
+| Read the record | `companies.register.profile` | `{"country": "EE", "registry_number": "11958539"}` | $0.002 per successful call |
 | Status only | `companies.register.status` | `{"country": "EE", "registry_number": "11958539"}` | Per successful call |
-| LEI | `companies.lei.search` | `{"registry_number": "11958539", "country": "EE"}`; by name only when there is no registry code | Per hit; no LEI is free |
-| Sanctions | `sanctions.screen.company` | `{"name": "Pipedrive OÜ", "country": "EE", "registry_number": "11958539"}` | Per hit; no match is free |
+| LEI | `companies.lei.search` | `{"registry_number": "11958539", "country": "EE"}`; by name only when there is no registry code | $0.004 per hit; no LEI is free |
+| Sanctions | `sanctions.screen.company` | `{"name": "Pipedrive OÜ", "country": "EE", "registry_number": "11958539"}` | $0.02 per hit; no match is free |
+| Public contracts (optional) | `procurement.supplier.awards` | `{"supplier": "Pipedrive OÜ", "country": "EE"}` | $0.01 per hit; no award is free |
 
+Prices are what `capability_inspect` answers today; the quote in step 2 is the one that counts.
 Pin `companies.register.search` to the `ahel-registry` endpoint as shown. Without the pin, a miss
-falls through to a scraper that bills per result and charges misses.
+falls through to a scraper (`ahel-collectors.european-company-profiles`, $0.0088 per result) that
+bills per result and charges misses.
 
 ## The run
 
@@ -64,6 +67,10 @@ falls through to a scraper that bills per result and charges misses.
    lists; report it as "no match on OFAC SDN, OFAC Non-SDN, EU FSF (list dates …)" using the dates
    in `provenance.covered_sources`. A row is a possible name match, not proof of identity: show the
    listed entity, list and date, and tell the user a person must review it.
+   Only when the user asks about public-sector work: `procurement.supplier.awards` with the
+   registered name lists published contract awards naming the company as supplier (TED and
+   national notices), each with `notice_id`, `publication_date`, `result_value` and `source`. Rows
+   are name matches: show them as candidates.
 7. **Write the table** as `eu-company-check-<YYYYMMDD-HHMM>.csv` and show it:
 
    ```
@@ -74,6 +81,49 @@ falls through to a scraper that bills per result and charges misses.
    sum of `execution.cost.customer_actual_usd` for that company's calls.
 8. **Report** in three lines: "10 companies → 9 records, 6 LEIs (2 lapsed), 0 sanctions matches.
    Total $0.084. File: …". Name any company not found.
+
+## Worked example
+
+One company, "Bolt Technology" in Estonia, run on 2 Nov 2026. Two calls, $0.004 in total.
+
+Call 1, the record:
+
+```
+run_capability {"id": "companies.register.search",
+  "arguments": {"name": "Bolt Technology", "country": "EE"},
+  "endpoint_ids": ["ahel-registry.companies.register.search"], "max_items": 3}
+```
+
+Answer (trimmed to the fields the table needs):
+
+```json
+{"state": "succeeded",
+ "execution": {"cost": {"customer_actual_usd": "0.004"},
+               "routing": {"served_by": "ahel-registry.companies.register.search"}},
+ "results": {"rows": [{"data": {"name": "Bolt Technology OÜ", "country": "EE",
+                                "registry_code": "12417834", "legal_form": "Osaühing",
+                                "status": "Registrisse kantud"}}],
+             "provenance": {"source": "Estonia RIK e-Business Register", "licence": "CC-BY-4.0",
+                            "source_updated_at": "Sun, 01 Nov 2026 08:37:12 GMT",
+                            "source_url": "https://avaandmed.ariregister.rik.ee/en/downloading-open-data"}}}
+```
+
+Call 2, the LEI:
+
+```
+run_capability {"id": "companies.lei.search",
+  "arguments": {"name": "Bolt Technology", "country": "EE"}, "max_items": 3}
+```
+
+Answer: `state: "succeeded"`, `rows: []`, `customer_actual_usd: "0"`; provenance `source: "GLEIF"`,
+`source_updated_at: "2026-11-02T08:00:00Z"`. Read it as "no LEI on file at GLEIF as of 2 Nov 2026",
+which is normal for a private company, and the $0.004 hold was returned.
+
+Row written:
+
+```
+Bolt Technology,EE,Bolt Technology OÜ,12417834,Osaühing,Registrisse kantud,,,none,,,"RIK e-Business Register 1 Nov 2026; GLEIF 2 Nov 2026",0.004
+```
 
 ## Rules
 

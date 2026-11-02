@@ -30,6 +30,15 @@ codex plugin marketplace add ahel-technologies/ahel
 
 Then open `/plugins` in Codex and install **ahel** and **eu-company-check**.
 
+**Any agent, with the [`skills`](https://skills.sh) CLI** (Claude Code, Codex, Cursor and others)
+
+```
+npx skills add ahel-technologies/ahel --skill eu-company-check
+```
+
+Add `-a claude-code` (or `codex`, `cursor`) and `-y` to skip the questions. The skill lands in
+`.claude/skills/` or `.agents/skills/` of the current project; `-g` installs it for the user.
+
 The `ahel` plugin is the connection (MCP address `https://mcp.ahel.ai`); the first call opens a
 sign-in at ahel.ai. New workspaces start with a small free balance.
 
