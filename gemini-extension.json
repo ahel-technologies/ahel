@@ -1,0 +1,12 @@
+{
+  "name": "ahel",
+  "version": "1.0.1",
+  "mcpServers": {
+    "ahel": {
+      "httpUrl": "https://mcp.ahel.ai",
+      "oauth": {
+        "enabled": true
+      }
+    }
+  }
+}
